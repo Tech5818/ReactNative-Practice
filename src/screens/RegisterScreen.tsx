@@ -1,13 +1,15 @@
 import React from 'react';
 
 import {FormLayout} from '@components/layouts/FormLayout';
-import {Text} from 'react-native';
+import {Text, View} from 'react-native';
 
 export const RegisterScreen = () => {
   return (
     <>
       <FormLayout>
-        <Text>안녕</Text>
+        <View>
+          <Text style={{color: '#000', zIndex: 100}}>Haha</Text>
+        </View>
       </FormLayout>
     </>
   );

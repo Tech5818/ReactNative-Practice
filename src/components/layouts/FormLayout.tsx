@@ -1,7 +1,7 @@
 import React from 'react';
 import {KeyboardAvoidingView, StatusBar, View} from 'react-native';
 
-import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 interface FormLayoutProps {
   children: React.ReactNode;
@@ -10,12 +10,16 @@ interface FormLayoutProps {
 export const FormLayout = ({children}: FormLayoutProps) => {
   return (
     <>
-      <SafeAreaProvider>
+      <SafeAreaView
+        style={{
+          flex: 1,
+          backgroundColor: 'red',
+        }}>
         <StatusBar />
-        <KeyboardAvoidingView behavior="height">
-          <View>{children}</View>
+        <KeyboardAvoidingView behavior="height" style={{flex: 1}}>
+          <View style={{flex: 1, backgroundColor: 'red'}}>{children}</View>
         </KeyboardAvoidingView>
-      </SafeAreaProvider>
+      </SafeAreaView>
     </>
   );
 };
